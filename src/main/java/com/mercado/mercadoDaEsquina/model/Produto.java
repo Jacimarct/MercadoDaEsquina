@@ -5,31 +5,21 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 
 @Entity(name = "tb_produto")
-public class Produto {
+//@MappedSuperclass
+public abstract class Produto {
 
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+        @Column(length = 100)
+        private String nome;
 
-    private String nome;
-    private BigDecimal preco;
-    private String quantidade;
+        @Column(precision = 9, scale = 2)
+        private BigDecimal preco;
 
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private Fruta fruta;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private Verdura verdura;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+        @Column(length = 20)
+        private String medida;
 
     public String getNome() {
         return nome;
@@ -40,36 +30,18 @@ public class Produto {
     }
 
     public BigDecimal getPreco() {
-        return preco;
-    }
+            return preco;
+        }
 
-    public void setPreco(BigDecimal preco) {
-        this.preco = preco;
-    }
+        public void setPreco(BigDecimal preco) {
+            this.preco = preco;
+        }
 
-    public String getQuantidade() {
-        return quantidade;
-    }
+        public String getMedida() {
+            return medida;
+        }
 
-    public void setQuantidade(String quantidade) {
-        this.quantidade = quantidade;
+        public void setMedida(String medida) {
+            this.medida = medida;
+        }
     }
-
-    public Fruta getFruta() {
-        return fruta;
-    }
-
-    public void setFruta(Fruta fruta) {
-        this.fruta = fruta;
-    }
-
-    public Verdura getVerdura() {
-        return verdura;
-    }
-
-    public void setVerdura(Verdura verdura) {
-        this.verdura = verdura;
-    }
-
-    // Getters e Setters
-}

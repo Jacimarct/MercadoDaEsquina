@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 
 
 @MappedSuperclass
-public abstract class BaseItem {
+public abstract class xxxx_BaseItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,26 +21,6 @@ public abstract class BaseItem {
     @Column(length = 20)
     private String quantidade;
 
-//    @Override
-//    public Long getId() {
-//        return id;
-//    }
-
-//    @Override
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-
-//    @Override
-//    public String getNome() {
-//        return nome;
-//    }
-
-//    @Override
-//    public void setNome(String nome) {
-//        this.nome = nome;
-//    }
-
     public BigDecimal getPreco() {
         return preco;
     }
@@ -49,7 +29,7 @@ public abstract class BaseItem {
         this.preco = preco;
     }
 
-    public String getQuantidade() {
+    public String getMe() {
         return quantidade;
     }
 
