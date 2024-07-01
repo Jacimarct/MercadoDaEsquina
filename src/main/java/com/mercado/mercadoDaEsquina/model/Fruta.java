@@ -1,28 +1,84 @@
 package com.mercado.mercadoDaEsquina.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
+import org.hibernate.Length;
 
-@Entity
-public class Fruta extends Produto {
-    private Double precoPorKilo;
-    private Double precoPorUnidade;
+import java.math.BigDecimal;
 
-    public Double getPrecoPorKilo() {
-        return precoPorKilo;
-    }
 
-    public void setPrecoPorKilo(Double precoPorKilo) {
-        this.precoPorKilo = precoPorKilo;
-    }
+@Entity(name = "tb_fruta")
+public class Fruta extends BaseItem {
 
-    public Double getPrecoPorUnidade() {
-        return precoPorUnidade;
-    }
 
-    public void setPrecoPorUnidade(Double precoPorUnidade) {
-        this.precoPorUnidade = precoPorUnidade;
-    }
 
+
+//    private Double precoPorKilo;
+//    private Double precoPorUnidade;
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Long id;
+//
+//    @Column(unique = true)
+//    private String nome;
+//
+//    @Column(precision = 9, scale = 2)
+//    private BigDecimal preco;
+//
+//    @Column(length = 20)
+//    private String quantidade;
+//
+//    public Double getPrecoPorKilo() {
+//        return precoPorKilo;
+//    }
+//
+//    public void setPrecoPorKilo(Double precoPorKilo) {
+//        this.precoPorKilo = precoPorKilo;
+//    }
+//
+//    public Double getPrecoPorUnidade() {
+//        return precoPorUnidade;
+//    }
+//
+//    public void setPrecoPorUnidade(Double precoPorUnidade) {
+//        this.precoPorUnidade = precoPorUnidade;
+//    }
+//
+//    @Override
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    @Override
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    @Override
+//    public String getNome() {
+//        return nome;
+//    }
+//
+//    @Override
+//    public void setNome(String nome) {
+//        this.nome = nome;
+//    }
+//
+//    public BigDecimal getPreco() {
+//        return preco;
+//    }
+//
+//    public void setPreco(BigDecimal preco) {
+//        this.preco = preco;
+//    }
+//
+//    public String getQuantidade() {
+//        return quantidade;
+//    }
+//
+//    public void setQuantidade(String quantidade) {
+//        this.quantidade = quantidade;
+//    }
 
     // Getters e Setters
 }

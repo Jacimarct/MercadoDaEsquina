@@ -1,18 +1,27 @@
 package com.mercado.mercadoDaEsquina.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-@Entity
+import java.math.BigDecimal;
+
+@Entity(name = "tb_produto")
 public class Produto {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
-    private Double preco;
-    private String unidade;
+    private BigDecimal preco;
+    private String quantidade;
+
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Fruta fruta;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Verdura verdura;
 
     public Long getId() {
         return id;
@@ -30,20 +39,36 @@ public class Produto {
         this.nome = nome;
     }
 
-    public Double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(Double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
-    public String getUnidade() {
-        return unidade;
+    public String getQuantidade() {
+        return quantidade;
     }
 
-    public void setUnidade(String unidade) {
-        this.unidade = unidade;
+    public void setQuantidade(String quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Fruta getFruta() {
+        return fruta;
+    }
+
+    public void setFruta(Fruta fruta) {
+        this.fruta = fruta;
+    }
+
+    public Verdura getVerdura() {
+        return verdura;
+    }
+
+    public void setVerdura(Verdura verdura) {
+        this.verdura = verdura;
     }
 
     // Getters e Setters

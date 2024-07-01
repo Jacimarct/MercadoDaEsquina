@@ -4,6 +4,7 @@ import com.mercado.mercadoDaEsquina.model.Produto;
 import com.mercado.mercadoDaEsquina.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import com.mercado.mercadoDaEsquina.model.BaseItem;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @RequestMapping("/api/produtos")
 public class ProdutoController {
     @Autowired
+
     private ProdutoService produtoService;
 
     @GetMapping
@@ -34,7 +36,7 @@ public class ProdutoController {
         if (existingProduto != null) {
             existingProduto.setNome(produto.getNome());
             existingProduto.setPreco(produto.getPreco());
-            existingProduto.setUnidade(produto.getUnidade());
+            existingProduto.setQuantidade(produto.getQuantidade());
             return produtoService.saveProduto(existingProduto);
         } else {
             return null;
