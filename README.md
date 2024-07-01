@@ -4,6 +4,12 @@
 
 ``` mermaid
 classDiagram
+    class Cliente {
+        String nome
+        String endereco
+        String cidade
+    }
+
     class Produto {
         <<abstract>>
         String nome
@@ -25,4 +31,5 @@ classDiagram
         +double preco
         +String medida
     }
+
 ```
