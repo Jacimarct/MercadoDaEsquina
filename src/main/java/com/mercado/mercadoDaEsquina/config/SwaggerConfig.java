@@ -16,7 +16,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("me.dio.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.mercado.mercadoDaEsquina.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

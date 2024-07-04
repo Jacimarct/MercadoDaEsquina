@@ -1,9 +1,9 @@
---CREATE TABLE IF NOT EXISTS cliente (
---    id BIGINT AUTO_INCREMENT PRIMARY KEY,
---    name VARCHAR(255) NOT NULL,
---    endereco VARCHAR(255) NOT NULL,
---    cidade VARCHAR(255) NOT NULL
---);
+CREATE TABLE IF NOT EXISTS cliente (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    endereco VARCHAR(255) NOT NULL,
+    cidade VARCHAR(255) NOT NULL
+);
 
 CREATE TABLE IF NOT EXISTS product (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
@@ -14,12 +14,12 @@ CREATE TABLE IF NOT EXISTS product (
 
 --CREATE TABLE IF NOT EXISTS compra (
 --    id BIGINT AUTO_INCREMENT PRIMARY KEY,
---    cliente_id BIGINT NOT NULL,
---    produto_id BIGINT NOT NULL,
+----    cliente_id BIGINT NOT NULL,
+--    product_id BIGINT NOT NULL,
 --    quantidade INT NOT NULL,
 --    data_compra DATE NOT NULL,
---    FOREIGN KEY (cliente_id) REFERENCES cliente(id),
---    FOREIGN KEY (produto_id) REFERENCES produto(id)
+----    FOREIGN KEY (cliente_id) REFERENCES cliente(id),
+----    FOREIGN KEY (product_id) REFERENCES product(id)
 --);
 
 
